@@ -1,0 +1,62 @@
+//ClasePadre
+/**
+ * @author Silas Antonio
+ */
+public class Zapatos{
+    String Codigo;
+    Double  Precio;
+    
+        //Método Constructor
+	public Zapatos (String Cod, Double Pre)
+        {
+		super();
+		this.Codigo = Cod;
+		this.Precio = Pre;
+	}
+        
+        //Método para saber el codigo de los zapatos a comprar
+	public String getCodigo()
+        {
+		return Codigo;
+	}
+	public void setCodigo (String _Codigo)
+        {
+		this.Codigo = _Codigo;
+	}
+        //Método para ver el precio de los zapatos a comprar
+	public Double getPrecio()
+        {
+		return Precio;
+	}
+	public void setPrecio (Double _Precio)
+        {
+		this.Precio = _Precio;
+	}
+	public void verDatos()
+        {
+            
+        }
+}
+//ClaseHija
+
+/**
+ * @author Silas Antonia
+ */
+public class Deportivos extends Zapatos{
+    String Marca; 
+    String Color; 
+    int Talla; 
+    public Deportivos(String Mar, String Col, int Tal, String Cod, Double Pre)
+    {
+        super(Cod, Pre);
+        this.Marca=Mar;
+        this.Color=Col;
+        this.Talla=Tal;
+    }
+    @Override
+    public void verDatos(){
+        JOptionPane.showInternalMessageDialog(null, "Marca: " + Marca + "\nColor: " + Color + "\nTalla: "
+        + Talla + "\nCodigo: " + Codigo + "\nPrecio: " + Precio, "Zapatos Deportivos",
+        JOptionPane.INFORMATION_MESSAGE);
+    }
+}
